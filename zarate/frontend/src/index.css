@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* LOGICA DEL SCROLL */
+html,
+body {
+  --tw-scrollbar-bg: #660303;
+  /* Background color of the scrollbar */
+  --tw-scrollbar-thumb: #b61f1f;
+  /* Thumb color of the scrollbar */
+  --tw-scrollbar-thumb-hover: #0569eb;
+  /* Hover color of the thumb */
+  scrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-bg);
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: var(--tw-scrollbar-thumb);
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tw-scrollbar-thumb-hover);
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background-color: var(--tw-scrollbar-bg);
+}
+
+/* ./src/yourCustomStyles.css */
+.custom-gradient {
+  background: linear-gradient(to top, #ff0037, rgba(255, 0, 0, 0.001));
+}
+
+/* styles.css */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* estilos para el home */
+@keyframes bounce-longer {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-50px);
+  }
+
+  60% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes opacity-animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes move-up-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(30px); /* Ajusta el valor para la distancia que quieras que el icono se mueva hacia abajo */
+  }
+}
+
+.animate-bounce-longer {
+  animation: bounce-longer 3s infinite;
+}
+
+.opacity-animation {
+  animation: opacity-animation 2s infinite;
+}
+
+.animate-move-up-down {
+  animation: move-up-down 2s infinite, opacity-animation 2s infinite; /* Combina ambas animaciones */
+}
