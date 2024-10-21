@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* LOGICA DEL SCROLL */
+html,
+body {
+  --tw-scrollbar-bg: #5E0A6F;
+  /* Background color of the scrollbar */
+  --tw-scrollbar-thumb: #8b11a3;
+  /* Thumb color of the scrollbar */
+  --tw-scrollbar-thumb-hover: #0569eb;
+  /* Hover color of the thumb */
+  scrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-bg);
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: var(--tw-scrollbar-thumb);
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tw-scrollbar-thumb-hover);
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background-color: var(--tw-scrollbar-bg);
+}
+
+/* ./src/yourCustomStyles.css */
+.custom-gradient {
+  background: linear-gradient(to top, #5E0A6F, rgba(255, 0, 0, 0.01));
+}
+
+/* styles.css */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* estilos para el home */
+@keyframes bounce-longer {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-50px);
+  }
+
+  60% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes opacity-animation {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes move-up-down {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(30px);
+    /* Ajusta el valor para la distancia que quieras que el icono se mueva hacia abajo */
+  }
+}
+
+.animate-bounce-longer {
+  animation: bounce-longer 3s infinite;
+}
+
+.opacity-animation {
+  animation: opacity-animation 2s infinite;
+}
+
+.animate-move-up-down {
+  animation: move-up-down 2s infinite, opacity-animation 2s infinite;
+  /* Combina ambas animaciones */
+}
+
+
+@keyframes spinOnce {
+  0% {
+      transform: rotateY(0deg);
+      opacity: 1;
+  }
+  80% {
+      transform: rotateY(864deg); /* 80% del tiempo para el primer giro */
+      opacity: 1;
+  }
+  100% {
+      transform: rotateY(1080deg); /* 3 giros completos */
+      opacity: 0;
+  }
+}
+
+.animate-spin-once {
+  animation: spinOnce 1.5s linear 1s forwards; /* 2s duración + 1s retraso */
+  transform-origin: center; /* Centro de la imagen */
+}
+
